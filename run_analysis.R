@@ -91,4 +91,6 @@ run_analysis<-function(){
   by_cyl <- group_by(data3,Activity,Subject)
   summury<-summarise_each(by_cyl,funs(mean))
   
+  ## out summury at file called tidydata.txt
+  write.table(summury,"tidydata.txt",row.name=FALSE)
 }
